@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qoma | Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varta:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script> 
+
+        window.onload = () => {
+           let button = document.getElementById("sub");
+           button.addEventListener('click', validaform, false);
+           let cep = document.getElementById("cep");
+           cep.addEventListener('keypress', formatInput, false);
+        }
+
+        function formatInput (event) {
+            let input = event.target.value;
+            if (input.length == 5) {
+                input += '-';
+                document.getElementById("cep").value = input;
+            }
+        }
+
+        function validaform(event) {
+            event.preventDefault();
+            if (document.getElementById("cep").value == "") {
+                alert ('Por favor, preencha o campo corretamente!');
+                document.getElementById("cep").focus();
+            }
+            else if (!document.getElementById("cep").value.match(/[0-9]{5}-[0-9]{3}$/)) {
+                alert ('CEP Inválido!');
+                document.getElementById("cep").focus();
+            } 
+            else {
+                var zip = document.getElementById("cep").value;
+                redirect(zip);
+
+            }
+        }
+
+        function redirect(payload = '') {
+            window.location.href = ("https://qoma.com.br/" + payload);
+        }
+
+    </script> 
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+        <figure>
+            <img class="logo" src="qoma-logo.png" alt="logo">
+        </figure>    
+        <form id="dados">
+            <input id = "cep" type="tel" maxlength="9" placeholder = "CEP" name = "input_cep" >
+            <p class="request-cep"><a class="request-cep" href="#">Esqueceu o CEP?</a></p> 
+            <input class="btn" id = "sub" type="submit" name = "button" value="Seguir"> 
+        </form>
+        <div class="link">
+            <p><a href="#">Já sou cadastrado</a></p> 
+        </div>
+        </div>
+    </div>
+</body>
+</html>
