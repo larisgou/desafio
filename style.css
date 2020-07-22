@@ -1,0 +1,93 @@
+body {
+    margin: 0px;
+    font-family: 'Varta', sans-serif;
+    font-size: 15px;
+}
+
+.container {
+    width: 90vw;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+figure {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    max-width: 350px;
+}
+
+#dados {
+    margin: 0 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "cep cep"
+                         "cep cep"
+                         "request btn"
+
+    
+    ;
+
+}
+
+input#cep {
+    grid-area: cep;
+    margin: 10px 5px;
+    height: 50px;
+    color: grey;
+}
+
+#cep {
+    padding-left: 15px;
+}
+
+p {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: underline;
+    margin-top: 50px;
+    color: #B3B3B3;
+}
+
+.request-cep {
+    grid-area: request;
+    text-align: left;
+    color: #4E92ED;
+    text-align: center;
+}
+
+.btn {
+    grid-area: btn;
+    background-color: #9B00FF;
+    color: #fff;
+    border-radius: 5px;
+    border-style: none;
+    font-family: 'Varta', sans-serif;
+    font-size: 15px;
+
+}
